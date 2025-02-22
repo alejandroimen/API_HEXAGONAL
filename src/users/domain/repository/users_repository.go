@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/alejandroimen/API_HEXAGONAL/users/domain/entities"
+import "github.com/alejandroimen/API_HEXAGONAL/src/users/domain/entities"
 
 type UserRepository interface {
 	Save(user entities.User) error

@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/alejandroimen/API_HEXAGONAL/users/domain/entities"
+	"github.com/alejandroimen/API_HEXAGONAL/src/users/domain/entities"
 )
 
 type UserRepoMySQL struct {

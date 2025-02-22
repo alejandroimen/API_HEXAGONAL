@@ -3,21 +3,21 @@ package main
 import (
 	"log"
 
-	"github.com/alejandroimen/API_HEXAGONAL/helpers"
-	productApp "github.com/alejandroimen/API_HEXAGONAL/products/application"
-	productController "github.com/alejandroimen/API_HEXAGONAL/products/infrastructure/controllers"
-	productRepo "github.com/alejandroimen/API_HEXAGONAL/products/infrastructure/repository"
-	productRoutes "github.com/alejandroimen/API_HEXAGONAL/products/infrastructure/routes"
-	userApp "github.com/alejandroimen/API_HEXAGONAL/users/application"
-	userController "github.com/alejandroimen/API_HEXAGONAL/users/infrastructure/controllers"
-	userRepo "github.com/alejandroimen/API_HEXAGONAL/users/infrastructure/repository"
-	userRoutes "github.com/alejandroimen/API_HEXAGONAL/users/infrastructure/routes"
+	"github.com/alejandroimen/API_HEXAGONAL/src/core"
+	productApp "github.com/alejandroimen/API_HEXAGONAL/src/products/application"
+	productController "github.com/alejandroimen/API_HEXAGONAL/src/products/infrastructure/controllers"
+	productRepo "github.com/alejandroimen/API_HEXAGONAL/src/products/infrastructure/repository"
+	productRoutes "github.com/alejandroimen/API_HEXAGONAL/src/products/infrastructure/routes"
+	userApp "github.com/alejandroimen/API_HEXAGONAL/src/users/application"
+	userController "github.com/alejandroimen/API_HEXAGONAL/src/users/infrastructure/controllers"
+	userRepo "github.com/alejandroimen/API_HEXAGONAL/src/users/infrastructure/repository"
+	userRoutes "github.com/alejandroimen/API_HEXAGONAL/src/users/infrastructure/routes"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	// Conexión a MySQL
-	db, err := helpers.NewMySQLConnection()
+	db, err := core.NewMySQLConnection()
 	if err != nil {
 		log.Fatalf("Error connecting to database: %v", err)
 	}

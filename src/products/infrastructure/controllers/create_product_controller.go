@@ -3,7 +3,7 @@ package controllers
 import (
 	"log"
 
-	"github.com/alejandroimen/API_HEXAGONAL/products/application"
+	"github.com/alejandroimen/API_HEXAGONAL/src/products/application"
 	"github.com/gin-gonic/gin"
 )
 
