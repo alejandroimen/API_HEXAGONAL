@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/alejandroimen/API_HEXAGONAL/users/infrastructure/controllers"
+	"github.com/alejandroimen/API_HEXAGONAL/src/users/infrastructure/controllers"
 	"github.com/gin-gonic/gin"
 )
 

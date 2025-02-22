@@ -3,7 +3,7 @@ package application
 import (
 	"fmt"
 
-	"github.com/alejandroimen/API_HEXAGONAL/users/domain/repository"
+	"github.com/alejandroimen/API_HEXAGONAL/src/users/domain/repository"
 )
 
 type DeleteUser struct {

@@ -3,8 +3,8 @@ package application
 import (
 	"fmt"
 
-	"github.com/alejandroimen/API_HEXAGONAL/users/domain/entities"
-	"github.com/alejandroimen/API_HEXAGONAL/users/domain/repository"
+	"github.com/alejandroimen/API_HEXAGONAL/src/users/domain/entities"
+	"github.com/alejandroimen/API_HEXAGONAL/src/users/domain/repository"
 )
 
 // Contiene un campo de repo de tipo repository.user... siendo esto una inyección de dependencias

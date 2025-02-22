@@ -3,7 +3,7 @@ package controllers
 import (
 	"strconv"
 
-	"github.com/alejandroimen/API_HEXAGONAL/users/application"
+	"github.com/alejandroimen/API_HEXAGONAL/src/users/application"
 	"github.com/gin-gonic/gin"
 )
 

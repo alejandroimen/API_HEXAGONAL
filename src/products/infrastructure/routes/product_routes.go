@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/alejandroimen/API_HEXAGONAL/products/infrastructure/controllers"
+	"github.com/alejandroimen/API_HEXAGONAL/src/products/infrastructure/controllers"
 	"github.com/gin-gonic/gin"
 )
 
@@ -9,6 +9,6 @@ func SetupProductRoutes(r *gin.Engine, createProductController *controllers.Crea
 	// las rutas
 	r.POST("/products", createProductController.Handle)
 	r.GET("/products", getProductsController.Handle)
-	r.PUT("/products/:userId", updateProductController.Handle)
+	r.PUT("/products/:id", updateProductController.Handle)
 	r.DELETE("/products/:id", deleteProductController.Handle)
 }

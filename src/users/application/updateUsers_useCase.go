@@ -3,8 +3,8 @@ package application
 import (
 	"fmt"
 
-	_ "github.com/alejandroimen/API_HEXAGONAL/users/domain/entities"
-	"github.com/alejandroimen/API_HEXAGONAL/users/domain/repository"
+	_ "github.com/alejandroimen/API_HEXAGONAL/src/users/domain/entities"
+	"github.com/alejandroimen/API_HEXAGONAL/src/users/domain/repository"
 )
 
 type UpdateUser struct {
