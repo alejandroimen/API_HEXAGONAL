@@ -1,8 +1,8 @@
 package application
 
 import (
-	"github.com/alejandroimen/API_HEXAGONAL/users/domain/entities"
-	"github.com/alejandroimen/API_HEXAGONAL/users/domain/repository"
+	"github.com/alejandroimen/API_HEXAGONAL/src/users/domain/entities"
+	"github.com/alejandroimen/API_HEXAGONAL/src/users/domain/repository"
 )
 
 type GetUsers struct {

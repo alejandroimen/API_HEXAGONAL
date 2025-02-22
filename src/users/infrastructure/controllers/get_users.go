@@ -3,7 +3,7 @@ package controllers
 import (
 	"log"
 
-	"github.com/alejandroimen/API_HEXAGONAL/users/application"
+	"github.com/alejandroimen/API_HEXAGONAL/src/users/application"
 	"github.com/gin-gonic/gin"
 )
 
@@ -25,7 +25,7 @@ func (gu *GetUsersController) Handle(ctx *gin.Context) {
 		return
 	}
 
-	log.Printf("Retornando %d usuarios", len(user))
+	log.Printf("Retornando|arios", len(user))
 	ctx.JSON(200, user)
 
 }

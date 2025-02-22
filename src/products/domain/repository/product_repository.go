@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/alejandroimen/API_HEXAGONAL/products/domain/entities"
+import "github.com/alejandroimen/API_HEXAGONAL/src/products/domain/entities"
 
 type ProductRepository interface {
 	Save(product entities.Product) error
