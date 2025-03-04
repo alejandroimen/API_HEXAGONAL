@@ -2,6 +2,8 @@ package controllers
 
 import (
 	"log"
+	"net/http"
+	"time"
 
 	"github.com/alejandroimen/API_HEXAGONAL/src/users/application"
 	"github.com/gin-gonic/gin"
@@ -25,7 +27,37 @@ func (gu *GetUsersController) Handle(ctx *gin.Context) {
 		return
 	}
 
-	log.Printf("Retornando|arios", len(user))
+	log.Printf("Retornando %d usuarios", len(user))
 	ctx.JSON(200, user)
+}
+func (c *GetUsersController) ShortPoll(ctx *gin.Context) {
+	// Obtener los productos (esto simula si hay cambios o no)
+	products, err := c.getUsers.Run()
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
 
+	if len(products) == 0 {
+		// No hay productos (o cambios)
+		ctx.JSON(http.StatusOK, gin.H{"message": "No hay datos nuevos"})
+		return
+	}
+
+	// Devolver productos (o cambios detectados)
+	ctx.JSON(http.StatusOK, gin.H{
+		"message":  "Datos actualizados",
+		"products": products,
+	})
+}
+
+// Controlador para Long Polling
+func (gu *GetUsersController) LongPoll(ctx *gin.Context) {
+	timeout := time.After(30 * time.Second)
+	select {
+	case <-timeout:
+		ctx.JSON(http.StatusOK, gin.H{"message": "No hay datos nuevos"})
+	case newData := <-waitForNewData():
+		ctx.JSON(http.StatusOK, gin.H{"data": newData})
+	}
 }
