@@ -39,7 +39,7 @@ func (c *GetUsersController) ShortPoll(ctx *gin.Context) {
 	}
 
 	if len(products) == 0 {
-		// No hay productos (o cambios)
+		// No hay usuarios (o cambios)
 		ctx.JSON(http.StatusOK, gin.H{"message": "No hay datos nuevos"})
 		return
 	}

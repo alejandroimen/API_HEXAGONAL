@@ -34,8 +34,24 @@ func (c *GetProductsController) Handle(ctx *gin.Context) {
 
 // Controlador para Short Polling
 func (c *GetProductsController) ShortPoll(ctx *gin.Context) {
-	// Simulación de no tener nuevos datos
-	ctx.JSON(http.StatusOK, gin.H{"message": "No hay datos nuevos"})
+	// Obtener los productos (esto simula si hay cambios o no)
+	products, err := c.getProducts.Run()
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	if len(products) == 0 {
+		// No hay productos (o cambios)
+		ctx.JSON(http.StatusOK, gin.H{"message": "No hay datos nuevos"})
+		return
+	}
+
+	// Devolver productos (o cambios detectados)
+	ctx.JSON(http.StatusOK, gin.H{
+		"message":  "Datos actualizados",
+		"products": products,
+	})
 }
 
 // Controlador para Long Polling
