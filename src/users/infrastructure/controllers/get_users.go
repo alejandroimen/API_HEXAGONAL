@@ -60,4 +60,14 @@ func (gu *GetUsersController) LongPoll(ctx *gin.Context) {
 	case newData := <-waitForNewData():
 		ctx.JSON(http.StatusOK, gin.H{"data": newData})
 	}
+
+}
+
+func waitForNewData() <-chan string {
+	newDataChannel := make(chan string)
+	go func() {
+		time.Sleep(10 * time.Second) // Simula el tiempo hasta que haya nuevos datos
+		newDataChannel <- "Datos nuevos disponibles"
+	}()
+	return newDataChannel
 }
